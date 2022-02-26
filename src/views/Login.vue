@@ -32,7 +32,7 @@ export default {
 <style>
 .mb-12 {
     margin-bottom: 12rem !important;
-    margin-left: 280px;
+    margin-left: 360px;
     margin-top: 60px;
 }
  .hm-gradient {
