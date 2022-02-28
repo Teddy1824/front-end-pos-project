@@ -1,44 +1,62 @@
 <template>
-<!-- <div id="app">s -->
-  <MDBNavbar light bg="light" expand="lg" container>
-    <MDBNavbarBrand href="#">Navbar</MDBNavbarBrand>
-    <MDBNavbarToggler target="navbarNav"></MDBNavbarToggler>
-      <div class="items">
-    <MDBNavbarNav collapse="navbarNav">
-      <MDBNavbarItem to="/" active> Home </MDBNavbarItem>
-      <MDBNavbarItem to="/products"> Products </MDBNavbarItem>
-      <MDBNavbarItem to="/contact"> Contact </MDBNavbarItem>
-      <!-- <MDBNavbarItem to="/signup"> Sign Up! </MDBNavbarItem> -->
-      <MDBNavbarItem><MDBBtn color="success" rounded href="/signup" tag="a"> Sign Up! </MDBBtn></MDBNavbarItem>
-      <MDBNavbarItem><MDBBtn color="info" rounded href="/login" tag="a"> Login </MDBBtn></MDBNavbarItem>
-      <!-- <MDBNavbarItem > Login </MDBNavbarItem> -->
-    </MDBNavbarNav>
+<div id="app">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">B&K Electric</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-mdb-toggle="collapse"
+      data-mdb-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/products">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/signup"><button type="button" class="btn btn-primary btn-rounded">Signup</button></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/login"><button type="button" class="btn btn-success btn-rounded">Login</button></a>
+        </li>
+        <li class="nav-item">
+         <a class="nav-link" href="/cart">
+          <span class="badge badge-pill bg-danger">1</span>
+          <span><i class="fas fa-shopping-cart"></i></span>
+        </a>
+        </li>
+      </ul>
     </div>
-  </MDBNavbar>
-<!-- </div> -->
+  </div>
+</nav>
+</div>
+
 </template>
 
 <script>
-import {
-    MDBNavbar,
-    MDBNavbarToggler,
-    MDBNavbarBrand,
-    MDBNavbarNav,
-    MDBNavbarItem,
-    MDBBtn
-  } from 'mdb-vue-ui-kit';
+
 export default {
    components: {
-      MDBNavbar,
-      MDBNavbarToggler,
-      MDBNavbarBrand,
-      MDBNavbarNav,
-      MDBNavbarItem,
-      MDBBtn
+      
     },
 }
 </script>
 
 <style>
+ div#navbarNav {
+    justify-content: flex-end;
+}
 
+.btn {
+    margin: 0;
+}
 </style>

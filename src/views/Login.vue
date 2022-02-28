@@ -1,25 +1,17 @@
 <template>
-<div class="hm-gradient">
-  <div class="col-md-6 mb-12">
-    <div class="card">
-      <div class="card-body">
-      <h3 class="text-center default-text py-3"><i class="fa fa-lock"></i> Login:</h3>
-     <div class="md-form">
-     <i class="fa fa-envelope prefix grey-text"></i>
-     <input type="text" id="defaultForm-email" class="form-control">
-     <label for="defaultForm-email">Your email</label>
-     </div>
-     <div class="md-form">
-     <i class="fa fa-lock prefix grey-text"></i>
-     <input type="password" id="defaultForm-pass" class="form-control">
-     <label for="defaultForm-pass">Your password</label>
-     </div>
-     <div class="text-center">
-    <button class="btn btn-default waves-effect waves-light">next</button>
-   </div>
-  </div>
- </div>
-</div>
+<div class="loginBox"> <img class="user" src="https://i.ibb.co/yVGxFPR/2.png" height="100px" width="100px">
+    <h3>Hey there!</h3>
+    <form>
+        <div class="inputBox"> <input id="uname" type="text" name="Username" placeholder="Username"> 
+        <input id="pass" type="password" name="Password" placeholder="Password"> </div>
+         <input type="submit" name="" value="Login" to="/products">
+    </form>
+    <h6>Don't have an account?, Sign up below to see our products</h6>
+    <div class="text-center">
+        <a href="/signup"><button type="button" class="btn btn-light btn-rounded">Sign-up >></button></a>
+        <!-- <input type="submit" name="" value="Sign-Up" to="/signup"> -->
+        <!-- <p style="color: #59238F;"></p> -->
+    </div>
 </div>
 </template>
 
@@ -30,69 +22,110 @@ export default {
 </script>
 
 <style>
-.mb-12 {
-    margin-bottom: 12rem !important;
-    margin-left: 360px;
-    margin-top: 60px;
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,700");
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: Raleway, sans-serif;
 }
- .hm-gradient {
-    background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
+
+body {
+	background: linear-gradient(90deg, #c7c5f4, #776bcc);
 }
-.darken-grey-text {
-    color: #2E2E2E;
+
+.loginBox {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    min-height: 200px;
+    background: white;
+    border-radius: 10px;
+    padding: 40px;
+    box-sizing: border-box
 }
-.danger-text {
-    color: #ff3547; }
-.default-text {
-    color: #2BBBAD; 
+
+.user {
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 20px
 }
-.info-text {
-    color: #33b5e5; 
+
+h3 {
+    margin: 0;
+    padding: 0 0 20px;
+    color: #59238F;
+    text-align: center
 }
-.form-white .md-form label {
-  color: #fff; 
+
+.loginBox input {
+    width: 100%;
+    margin-bottom: 20px
 }
-.form-white input[type=text]:focus:not([readonly]) {
-    border-bottom: 1px solid #fff;
-    -webkit-box-shadow: 0 1px 0 0 #fff;
-    box-shadow: 0 1px 0 0 #fff; 
+
+.loginBox input[type="text"],
+.loginBox input[type="password"] {
+    border: none;
+    border-bottom: 2px solid #262626;
+    outline: none;
+    height: 40px;
+    color: black;
+    background: transparent;
+    font-size: 16px;
+    padding-left: 20px;
+    box-sizing: border-box
 }
-.form-white input[type=text]:focus:not([readonly]) + label {
-    color: #fff; 
+
+.loginBox input[type="text"]:hover,
+.loginBox input[type="password"]:hover {
+    color: white;
+    border: 1px solid white;
+    box-shadow: 0 0 5px rgba(0, 255, 0, .3), 0 0 10px rgba(0, 255, 0, .2), 0 0 15px rgba(0, 255, 0, .1), 0 2px 0 black
 }
-.form-white input[type=password]:focus:not([readonly]) {
-    border-bottom: 1px solid #fff;
-    -webkit-box-shadow: 0 1px 0 0 #fff;
-    box-shadow: 0 1px 0 0 #fff; 
+
+.loginBox input[type="text"]:focus,
+.loginBox input[type="password"]:focus {
+    border-bottom: 2px solid #59238F
 }
-.form-white input[type=password]:focus:not([readonly]) + label {
-    color: #fff; 
+
+.inputBox {
+    position: relative
 }
-.form-white input[type=password], .form-white input[type=text] {
-    border-bottom: 1px solid #fff; 
+
+.inputBox span {
+    position: absolute;
+    top: 10px;
+    color: #262626
 }
-.form-white .form-control:focus {
+
+.loginBox input[type="submit"] {
+    border: none;
+    outline: none;
+    height: 40px;
+    font-size: 16px;
+    background: #59238F;
     color: #fff;
+    border-radius: 20px;
+    cursor: pointer
 }
-.form-white .form-control {
-    color: #fff;
+
+.loginBox a {
+    color: #262626;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    display: block
 }
-.form-white textarea.md-textarea:focus:not([readonly]) {
-    border-bottom: 1px solid #fff;
-    box-shadow: 0 1px 0 0 #fff;
-    color: #fff; 
+
+a:hover {
+    color: #00ffff
 }
-.form-white textarea.md-textarea  {
-    border-bottom: 1px solid #fff;
-    color: #fff;
-}
-.form-white textarea.md-textarea:focus:not([readonly])+label {
-    color: #fff;
-}
-.ripe-malinka-gradient {
-    background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
-}
-.near-moon-gradient {
-    background-image: linear-gradient(to bottom, #5ee7df 0%, #b490ca 100%);
+
+p {
+    color: #0000ff
 }
 </style>

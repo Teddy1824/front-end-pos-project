@@ -1,66 +1,15 @@
 <template>
-<div class="hm-gradient">
-
-                <div class="col-md-6 mb-4">
-                    <div class="card ripe-malinka-gradient form-white">
-                        <div class="card-body">
-            
-                            <form>
-                                <h2 class="text-center font-up font-bold py-4 white-text">Sign up</h2>
-                                <div class="md-form">
-                                    <i class="fa fa-user prefix white-text"></i>
-                                    <input type="text" id="orangeForm-name2" class="form-control">
-                                    <label for="orangeForm-name2">Your name</label>
-                                </div>
-                                <div class="md-form">
-                                    <i class="fa fa-envelope prefix white-text"></i>
-                                    <input type="text" id="orangeForm-email2" class="form-control">
-                                    <label for="orangeForm-email2">Your email</label>
-                                </div>
-                                <div class="md-form">
-                                    <i class="fa fa-lock prefix white-text"></i>
-                                    <input type="password" id="orangeForm-pass2" class="form-control">
-                                    <label for="orangeForm-pass2">Your password</label>
-                                </div>
-                                <div class="text-center">
-                                    <button class="btn btn-outline-white waves-effect waves-light">next</button>
-                                </div>
-                            </form>
-            
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-4">
-                    <div class="card">
-                        <div class="card-body">
-            
-                            <form>
-                                <h2 class="text-center font-up font-bold deep-orange-text py-4">Sign up</h2>
-                                <div class="md-form">
-                                    <i class="fa fa-user prefix grey-text"></i>
-                                    <input type="text" id="orangeForm-name3" class="form-control">
-                                    <label for="orangeForm-name3">Your name</label>
-                                </div>
-                                <div class="md-form">
-                                    <i class="fa fa-envelope prefix grey-text"></i>
-                                    <input type="text" id="orangeForm-email3" class="form-control">
-                                    <label for="orangeForm-email3">Your email</label>
-                                </div>
-                                <div class="md-form">
-                                    <i class="fa fa-lock prefix grey-text"></i>
-                                    <input type="password" id="orangeForm-pass3" class="form-control">
-                                    <label for="orangeForm-pass3">Your password</label>
-                                </div>
-                                <div class="text-center">
-                                    <button class="btn btn-deep-orange">next<i class="fa fa-angle-double-right pl-2" aria-hidden="true"></i></button>
-                                </div>
-                            </form>
-            
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+<div class="loginBox"> <img class="user" src="https://i.ibb.co/yVGxFPR/2.png" height="100px" width="100px">
+    <h3>Sign in here</h3>
+    <form>
+        <div class="inputBox"> 
+            <input id="uname" type="text" name="Username" placeholder="Username"> 
+            <input id="email" type="email" name="Email" placeholder="joe@1234.com">
+            <input id="pass" type="password" name="Password" placeholder="Password"> 
+            </div> 
+            <input type="submit" name="" value="Sign Up">
+    </form> 
+</div>
 </template>
 
 <script>
@@ -70,69 +19,100 @@ export default {
 </script>
 
 <style>
-  .mb-12 {
-    margin-bottom: 12rem !important;
-    margin-left: 280px;
-    margin-top: 60px;
+ .loginBox {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    min-height: 200px;
+    background: #000000;
+    border-radius: 10px;
+    padding: 40px;
+    box-sizing: border-box
 }
- .hm-gradient {
-    background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
+
+.user {
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 20px
 }
-.darken-grey-text {
-    color: #2E2E2E;
+
+h3 {
+    margin: 0;
+    padding: 0 0 20px;
+    color: #59238F;
+    text-align: center
 }
-.danger-text {
-    color: #ff3547; }
-.default-text {
-    color: #2BBBAD; 
+
+.loginBox input {
+    width: 100%;
+    margin-bottom: 20px
 }
-.info-text {
-    color: #33b5e5; 
+
+.loginBox input[type="text"],
+.loginBox input[type="password"],
+.loginBox input[type="email"] {
+    border: none;
+    border-bottom: 2px solid #262626;
+    outline: none;
+    height: 40px;
+    color: black;
+    background: transparent;
+    font-size: 16px;
+    padding-left: 20px;
+    box-sizing: border-box
 }
-.form-white .md-form label {
-  color: #fff; 
+
+.loginBox input[type="text"]:hover,
+.loginBox input[type="password"]:hover,
+.loginBox input[type="email"]:hover {
+    color: black;
+    border: 1px solid #59238F;
+    box-shadow: 0 0 5px rgba(0, 255, 0, .3), 0 0 10px rgba(0, 255, 0, .2), 0 0 15px rgba(0, 255, 0, .1), 0 2px 0 black
 }
-.form-white input[type=text]:focus:not([readonly]) {
-    border-bottom: 1px solid #fff;
-    -webkit-box-shadow: 0 1px 0 0 #fff;
-    box-shadow: 0 1px 0 0 #fff; 
+
+.loginBox input[type="text"]:focus,
+.loginBox input[type="password"]:focus,
+.loginBox input[type="email"]:focus {
+    border-bottom: 2px solid #262626
 }
-.form-white input[type=text]:focus:not([readonly]) + label {
-    color: #fff; 
+
+.inputBox {
+    position: relative
 }
-.form-white input[type=password]:focus:not([readonly]) {
-    border-bottom: 1px solid #fff;
-    -webkit-box-shadow: 0 1px 0 0 #fff;
-    box-shadow: 0 1px 0 0 #fff; 
+
+.inputBox span {
+    position: absolute;
+    top: 10px;
+    color: #262626
 }
-.form-white input[type=password]:focus:not([readonly]) + label {
-    color: #fff; 
+
+.loginBox input[type="submit"] {
+    border: none;
+    outline: none;
+    height: 40px;
+    font-size: 16px;
+    background: #59238F;
+    color: black;
+    border-radius: 20px;
+    cursor: pointer
 }
-.form-white input[type=password], .form-white input[type=text] {
-    border-bottom: 1px solid #fff; 
+
+.loginBox a {
+    color: #262626;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    display: block
 }
-.form-white .form-control:focus {
-    color: #fff;
+
+a:hover {
+    color: #00ffff
 }
-.form-white .form-control {
-    color: #fff;
-}
-.form-white textarea.md-textarea:focus:not([readonly]) {
-    border-bottom: 1px solid #fff;
-    box-shadow: 0 1px 0 0 #fff;
-    color: #fff; 
-}
-.form-white textarea.md-textarea  {
-    border-bottom: 1px solid #fff;
-    color: #fff;
-}
-.form-white textarea.md-textarea:focus:not([readonly])+label {
-    color: #fff;
-}
-.ripe-malinka-gradient {
-    background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
-}
-.near-moon-gradient {
-    background-image: linear-gradient(to bottom, #5ee7df 0%, #b490ca 100%);
+
+p {
+    color: #0000ff
 }
 </style>
