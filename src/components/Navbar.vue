@@ -30,7 +30,7 @@
         </li>
         <li class="nav-item">
          <a class="nav-link" href="/cart">
-          <span class="badge badge-pill bg-danger">1</span>
+          <span class="badge badge-pill bg-danger">0</span>
           <span><i class="fas fa-shopping-cart"></i></span>
         </a>
         </li>
