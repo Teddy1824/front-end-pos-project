@@ -22,7 +22,7 @@
                 <div class="col-12 col-lg-6 col-xl-5 offset-xl-1">
                     <h1>Everything is Electric</h1>
                     <p>We at B&K, we source and supply our consumers with the best electronic devices like fridges, smartphones, gaming consoles and a lot more. So click the button below to be blown away by our products and amazing prices.<br></p> 
-                    <a href="/signup"><button class="btn btn-light btn-lg action-button" type="button">Start shopping >><i class="fa fa-long-arrow-right ml-2"></i></button></a>
+                    <a href="/login"><button class="btn btn-light btn-lg action-button" type="button">Start shopping >><i class="fa fa-long-arrow-right ml-2"></i></button></a>
                 </div>
                 <div class="col-md-5 col-lg-5 offset-lg-1 offset-xl-0 d-none d-lg-block phone-holder">
                     <div class="iphone-mockup"> <img class="device" src="https://i.imgur.com/bkCeTu7.png"> <!-- <div class="screen">	</div>	-->
@@ -73,9 +73,7 @@
 
 <style>
  .header-blue {
-    /* background: linear-gradient(135deg, #fe2929, #ffb3c5);
-    background-color: #184e8e; */
-    /* padding-bottom: 80px; */
+    margin-top: -45px;
     font-family: 'Source Sans Pro', sans-serif
 }
 

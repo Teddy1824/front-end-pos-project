@@ -81,7 +81,7 @@ h3 {
 
 .loginBox input[type="text"]:hover,
 .loginBox input[type="password"]:hover {
-    color: white;
+    color: black;
     border: 1px solid white;
     box-shadow: 0 0 5px rgba(0, 255, 0, .3), 0 0 10px rgba(0, 255, 0, .2), 0 0 15px rgba(0, 255, 0, .1), 0 2px 0 black
 }

@@ -59,4 +59,9 @@ export default {
 .btn {
     margin: 0;
 }
+
+.bg-light {
+  background-color: rgba(251, 251, 251, var(--mdb-bg-opacity));
+  --mdb-bg-opacity: 0.1;
+}
 </style>

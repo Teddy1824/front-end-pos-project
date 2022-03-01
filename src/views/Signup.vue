@@ -1,9 +1,10 @@
 <template>
 <div class="loginBox"> <img class="user" src="https://i.ibb.co/yVGxFPR/2.png" height="100px" width="100px">
-    <h3>Sign in here</h3>
+    <h3>Sign up here</h3>
     <form>
         <div class="inputBox"> 
-            <input id="uname" type="text" name="Username" placeholder="Username"> 
+            <input id="name" type="text" name="Username" placeholder="Name">
+            <input id="number" type="tel" name="Contact" placeholder="0123456789">
             <input id="email" type="email" name="Email" placeholder="joe@1234.com">
             <input id="pass" type="password" name="Password" placeholder="Password"> 
             </div> 
@@ -52,7 +53,8 @@ h3 {
 
 .loginBox input[type="text"],
 .loginBox input[type="password"],
-.loginBox input[type="email"] {
+.loginBox input[type="email"],
+.loginBox input[type="tel"] {
     border: none;
     border-bottom: 2px solid #262626;
     outline: none;
@@ -66,7 +68,8 @@ h3 {
 
 .loginBox input[type="text"]:hover,
 .loginBox input[type="password"]:hover,
-.loginBox input[type="email"]:hover {
+.loginBox input[type="email"]:hover,
+.loginBox input[type="tel"] {
     color: black;
     border: 1px solid #59238F;
     box-shadow: 0 0 5px rgba(0, 255, 0, .3), 0 0 10px rgba(0, 255, 0, .2), 0 0 15px rgba(0, 255, 0, .1), 0 2px 0 black
@@ -74,7 +77,8 @@ h3 {
 
 .loginBox input[type="text"]:focus,
 .loginBox input[type="password"]:focus,
-.loginBox input[type="email"]:focus {
+.loginBox input[type="email"]:focus,
+.loginBox input[type="tel"]:focus {
     border-bottom: 2px solid #262626
 }
 
