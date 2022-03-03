@@ -1,22 +1,57 @@
 <template>
-<div class="loginBox"> <img class="user" src="https://i.ibb.co/yVGxFPR/2.png" height="100px" width="100px">
+    <form @submit.prevent="register">
+<div class="loginBox">
+     <img class="user" src="https://i.ibb.co/yVGxFPR/2.png" height="100px" width="100px" />
     <h3>Sign up here</h3>
-    <form>
         <div class="inputBox"> 
-            <input id="name" type="text" name="Username" placeholder="Name">
-            <input id="number" type="tel" name="Contact" placeholder="0123456789">
-            <input id="email" type="email" name="Email" placeholder="joe@1234.com">
-            <input id="pass" type="password" name="Password" placeholder="Password"> 
-            </div> 
-            <input type="submit" name="" value="Sign Up">
-    </form> 
+            <input id="name" type="text" name="Username" v-model="fullname" placeholder="Name">
+            <input id="tel" type="tel" name="Contact" v-model="phone_number" placeholder="0123456789">
+            <input id="email" type="email" name="Email" v-model="email" placeholder="joe@1234.com">
+            <input id="pass" type="password" name="Password" v-model="password" placeholder="Password"> 
+            </div>
+           <input type="submit" name="" value="Sign Up">
 </div>
+    </form> 
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      fullname: "",
+      phone_number: "",
+      email: "",
+      password: "",
+    };
+  },
+  methods: {
+    register() {
+      fetch("https://pos-backend-pos.herokuapp.com/user/register", {
+        method: "POST",
+        body: JSON.stringify({
+          fullname: this.fullname,
+          phone_number: this.phone_number,
+          email: this.email,
+          password: this.password,
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+        .then((response) => response.json())
+        .then((json) => {
+          console.log(json);
+          alert("User registered");
+          localStorage.setItem("jwt", json.jwt);
+          this.$router.push({ name: "Login" });
+        })
+        .catch((err) => {
+          alert(err);
+        });
+    },
+  },
+};
 
-}
 </script>
 
 <style>

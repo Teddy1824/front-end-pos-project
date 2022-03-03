@@ -1,24 +1,76 @@
 <template>
 <div class="loginBox"> <img class="user" src="https://i.ibb.co/yVGxFPR/2.png" height="100px" width="100px">
     <h3>Hey there!</h3>
-    <form>
-        <div class="inputBox"> <input id="uname" type="text" name="Username" placeholder="Username"> 
-        <input id="pass" type="password" name="Password" placeholder="Password"> </div>
-         <input type="submit" name="" value="Login" to="/products">
+    <form @submit.prevent="handleLogin">
+        <div class="inputBox"> <input id="uname" type="email" name="email" placeholder="Email" v-model="email"/> 
+        <input id="pass" type="password" name="password" placeholder="Password" v-model="password"/> </div>
+         <a href="/products"><input type="submit" name="" value="Login"/></a>
     </form>
     <h6>Don't have an account?, Sign up below to see our products</h6>
     <div class="text-center">
         <a href="/signup"><button type="button" class="btn btn-light btn-rounded">Sign-up >></button></a>
-        <!-- <input type="submit" name="" value="Sign-Up" to="/signup"> -->
-        <!-- <p style="color: #59238F;"></p> -->
     </div>
 </div>
 </template>
 
 <script>
-export default {
 
-}
+export default {
+  name: "Login",
+  data() {
+    
+    return {
+      loading: false,
+      message: "",
+      email: '',
+      password: ''
+
+
+    };
+  },
+  computed: {
+    loggedIn() {
+      return this.$store.state.auth.status.loggedIn;
+      // if (this.loggedIn) {
+      //   this.$router.push("/products")
+      // }
+    },
+  },
+   created() {
+    if (this.loggedIn) {
+      this.$router.push({ name: "Products"});
+    }
+  },
+  methods: {
+    handleLogin() {
+      console.log(this.email, this.password)
+      fetch("https://pos-backend-pos.herokuapp.com/user/login", {
+        method: "POST",
+        body: JSON.stringify({
+          email: this.email,
+          password: this.password
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+        .then((response) => response.json())
+        .then((json) => {
+          console.log(json);
+          if(json.message) {
+            alert("User logged in");
+            localStorage.setItem("jwt", json.message);
+            this.$router.push("/products");
+          }
+
+        })
+        .catch((err) => {
+          alert(err);
+        });
+    
+    },
+  },
+};
 </script>
 
 <style>

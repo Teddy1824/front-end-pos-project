@@ -3,7 +3,7 @@ import Home from '../views/Home.vue'
 import Signup from '../views/Signup.vue'
 import Products from '../views/Products.vue'
 import Login from '../views/Login.vue'
-// import Contact from '../views/Contact.vue'
+import Profile from '../views/Profile.vue'
 import Cart from '../views/Cart.vue'
 
 
@@ -28,11 +28,11 @@ const routes = [
     name: 'Login',
     component: Login
   },
-  // {
-  //   path: '/contact',
-  //   name: 'Contact',
-  //   component: Contact
-  // },
+  {
+    path: '/profile',
+    name: 'Profile',
+    component: Profile
+  },
   {
     path: '/cart',
     name: 'Cart',
@@ -45,15 +45,15 @@ const router = createRouter({
   routes
 })
 
-router.beforeEach((to, from, next) => {
-  const publicPages = ['/signup', '/login', '/'];
-  const authRequired = !publicPages.includes(to.path);
-  const loggedIn = localStorage.getItem('user');
-  if (authRequired && !loggedIn) {
-    next('/signup');
-  } else {
-    next();
-  }
-});
+// router.beforeEach( async (to, from, next) => {
+//   const publicPages = ['/', '/login', '/signup'];
+//   const authRequired = !publicPages.includes(to.path);
+//   const loggedIn = localStorage.getItem('user');
+//   if (authRequired && !loggedIn) {
+//     next('/products');
+//   } else {
+//     next();
+//   }
+// });
 
 export default router

@@ -65,7 +65,12 @@ export default {
       }
   },
   mounted() {
-     fetch('https://pos-collabo-backend.herokuapp.com/products')
+     fetch('https://pos-backend-pos.herokuapp.com/products', {
+       headers: {
+         Authorization: `Bearer ${localStorage.getItem('jwt')}`
+       }
+     })
+
   .then(res => res.json())
   .then(json => {
       console.log(json);
