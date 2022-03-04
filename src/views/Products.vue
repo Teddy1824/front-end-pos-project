@@ -1,6 +1,6 @@
 <template>
 <form id="app-cover">
-  <div id="select-box">
+  <!-- <div id="select-box">
     <input type="checkbox" id="options-view-button">
     <div id="select-button" class="brd">
       <div id="selected-value">
@@ -28,7 +28,7 @@
       </div>
       <div id="option-bg"></div>
     </div>
-  </div>
+  </div> -->
 </form>
 <br />
   <div class="container d-flex justify-content-center mt-50 mb-50">

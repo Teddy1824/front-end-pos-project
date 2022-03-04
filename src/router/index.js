@@ -29,6 +29,10 @@ const routes = [
     component: Login
   },
   {
+    path: '/logout',
+    name: 'Logout'
+  },
+  {
     path: '/profile',
     name: 'Profile',
     component: Profile
@@ -45,15 +49,15 @@ const router = createRouter({
   routes
 })
 
-router.beforeEach( async (to, from, next) => {
-  const publicPages = ['/', '/login', '/signup'];
-  const authRequired = !publicPages.includes(to.path);
-  const loggedIn = localStorage.getItem('user');
-  if (authRequired && !loggedIn) {
-    next('/products');
-  } else {
-    next();
-  }
-});
+// router.beforeEach( async (to, from, next) => {
+//   const publicPages = ['/', '/login', '/signup'];
+//   const authRequired = !publicPages.includes(to.path);
+//   const loggedIn = localStorage.getItem('user');
+//   if (authRequired && !loggedIn) {
+//     next('/products');
+//   } else {
+//     next();
+//   }
+// });
 
 export default router

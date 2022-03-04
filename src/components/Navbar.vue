@@ -29,6 +29,9 @@
           <router-link class="nav-link" :to="{ name: 'Login' }"><button type="button" class="btn btn-success btn-rounded">Login</button></router-link>
         </li>
         <li class="nav-item">
+          <router-link class="nav-link" :to="{ name: 'Logout'}"><button type="button" class="btn btn-danger btn-rounded" @click="setLogin"> {{loggedIn !== 'null' ? 'Logout' : 'Login'}} </button></router-link>
+        </li>
+        <li class="nav-item">
          <router-link class="nav-link" :to="{ name: 'Cart' }">
           <span class="badge badge-pill bg-danger">0</span>
           <span><i class="fas fa-shopping-cart"></i></span>
@@ -48,10 +51,20 @@
 <script>
 
 export default {
-   components: {
-      
-    },
-}
+      methods:{
+    setLogin(){
+      this.$store.dispatch('/auth/logout')
+     this.$router.push('/login');
+   }
+  },
+  computed: {
+    currentUser() {
+      return this.$store.state.auth.user;
+    }
+  }
+};
+
+
 </script>
 
 <style>

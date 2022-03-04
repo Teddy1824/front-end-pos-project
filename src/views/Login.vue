@@ -4,7 +4,7 @@
     <form @submit.prevent="handleLogin">
         <div class="inputBox"> <input id="uname" type="email" name="email" placeholder="Email" v-model="email"/> 
         <input id="pass" type="password" name="password" placeholder="Password" v-model="password"/> </div>
-         <a href="/products"><input type="submit" name="" value="Login"/></a>
+         <input type="submit" name="" value="Login" href="/products"/>
     </form>
     <h6>Don't have an account?, Sign up below to see our products</h6>
     <div class="text-center">
@@ -31,9 +31,6 @@ export default {
   computed: {
     loggedIn() {
       return this.$store.state.auth.status.loggedIn;
-      // if (this.loggedIn) {
-      //   this.$router.push("/products")
-      // }
     },
   },
    created() {
@@ -62,10 +59,10 @@ export default {
             localStorage.setItem("jwt", json.message);
             this.$router.push("/products");
           }
-
         })
         .catch((err) => {
           alert(err);
+          this.$router.push("/login")
         });
     
     },
