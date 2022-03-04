@@ -17,7 +17,7 @@
                         <div class="row text-muted">Shirt</div>
                         <div class="row">Cotton T-shirt</div>
                     </div>
-                    <div class="col"> <a href="#">-</a><a href="#" class="border">1</a><a href="#">+</a> </div>
+                    <div class="col"> <a href="#">-</a><a class="border">1</a><a href="#">+</a> </div>
                     <div class="col">R44.00 <span class="close">&#10005;</span></div>
                 </div>
             </div>
@@ -31,17 +31,11 @@
             <hr>
             <div class="row">
                 <div class="col" style="padding-left:0;">ITEMS 3</div>
-                <div class="col text-right">&euro; 132.00</div>
+                <div class="col text-right">R132.00</div>
             </div>
-            <form>
-                <p>SHIPPING</p> <select>
-                    <option class="text-muted">Standard-Delivery- &euro;5.00</option>
-                </select>
-                <p>GIVE CODE</p> <input id="code" placeholder="Enter your code">
-            </form>
             <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
                 <div class="col">TOTAL PRICE</div>
-                <div class="col text-right">&euro; 137.00</div>
+                <div class="col text-right">R 137.00</div>
             </div> <button class="btn">CHECKOUT</button>
         </div>
     </div>

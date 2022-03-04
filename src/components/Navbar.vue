@@ -1,6 +1,6 @@
 <template>
 <div id="app">
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" v-bind:class=" { 'navbarOpen': show }">
   <div class="container-fluid">
     <a class="navbar-brand">B&K Electric</a>
     <button
@@ -11,10 +11,11 @@
       aria-controls="navbarNav"
       aria-expanded="false"
       aria-label="Toggle navigation"
+      v-bind="toggleNavbar"
     >
       <i class="fas fa-bars"></i>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="collapse navbar-collapse" id="navbarNav" v-bind:class="{ in: show }">
       <ul class="navbar-nav">
         <li class="nav-item">
           <router-link class="nav-link" :to="{ name: 'Home' }">Home</router-link>
@@ -51,9 +52,17 @@
 <script>
 
 export default {
-      methods:{
+    data() {
+    return {
+      show: true
+    }
+  },
+    methods:{
+      toggleNavbar() {
+      this.show = !this.show;
+      },
     setLogin(){
-      this.$store.dispatch('/auth/logout')
+     localStorage.removeItem('auth-token')
      this.$router.push('/login');
    }
   },
